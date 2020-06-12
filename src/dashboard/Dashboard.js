@@ -27,7 +27,7 @@ function Copyright() {
 		<Typography variant="body2" color="textSecondary" align="center">
 			{"PBDatascince © "}
 			<Link color="inherit" href="https://material-ui.com/">
-				Your Website
+				PB DataScience
 			</Link>{" "}
 			{new Date().getFullYear()}
 			{"."}

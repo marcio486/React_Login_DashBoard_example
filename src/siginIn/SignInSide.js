@@ -18,7 +18,7 @@ function Copyright() {
 		<Typography variant="body2" color="textSecondary" align="center">
 			{"Copyright © "}
 			<Link color="inherit" href="https://material-ui.com/">
-				Your Website
+				PB DataScience
 			</Link>{" "}
 			{new Date().getFullYear()}
 			{"."}
@@ -53,7 +53,7 @@ export default function SignInSide(props) {
 						<LockOutlinedIcon />
 					</Avatar>
 					<Typography component="h1" variant="h5">
-						Sign in
+						LogIn
 					</Typography>
 					<form className={classes.form} noValidate>
 						<TextField
@@ -62,7 +62,7 @@ export default function SignInSide(props) {
 							required
 							fullWidth
 							id="email"
-							label="Email Address"
+							label="Email"
 							name="email"
 							autoComplete="email"
               autoFocus
@@ -93,17 +93,17 @@ export default function SignInSide(props) {
 							className={classes.submit}
 							onClick={validateLogin}
 						>
-							Sign In
+							Logar
 						</Button>
 						<Grid container>
 							<Grid item xs>
 								<Link href="#" variant="body2">
-									Forgot password?
+									Esqueceu a senha?(não vai pra lugar ennhum)
 								</Link>
 							</Grid>
 							<Grid item>
 								<Link href="#" variant="body2">
-									{"Don't have an account? Sign Up"}
+									{"Se Registre"}
 								</Link>
 							</Grid>
 						</Grid>
@@ -122,7 +122,7 @@ const useStyles = makeStyles((theme) => ({
 		height: "100vh",
 	},
 	image: {
-		backgroundImage: "url(https://source.unsplash.com/random)",
+		backgroundImage: "../../public/logo192.png",
 		backgroundRepeat: "no-repeat",
 		backgroundColor:
 			theme.palette.type === "light"
