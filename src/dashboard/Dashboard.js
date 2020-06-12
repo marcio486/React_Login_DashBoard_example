@@ -20,7 +20,7 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import { mainListItems, secondaryListItems } from "./listItems";
 import Chart from "./Chart";
-import Orders from "./Orders";
+import ReactFileReader from "react-file-reader";
 
 function Copyright() {
 	return (
@@ -46,6 +46,16 @@ export default function Dashboard() {
 	const handleDrawerClose = () => {
 		setOpen(false);
 	};
+
+	const handleFiles = files => {
+		var reader = new FileReader();
+		reader.onload = function(e) {
+			// Use reader.result
+			alert(reader.result)
+		}
+		reader.readAsText(files[0]);
+	}
+
 	const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
 	return (
@@ -108,17 +118,17 @@ export default function Dashboard() {
 				<div className={classes.appBarSpacer} />
 				<Container maxWidth="lg" className={classes.container}>
 					<Grid container spacing={3}>
+						{/*CSV*/}
+						<ReactFileReader
+							handleFiles={handleFiles}
+							fileTypes={".csv"}
+						>
+							<button className="btn">Upload</button>
+						</ReactFileReader>
 						{/* Chart */}
 						<Grid item xs={12} md={8} lg={9}>
 							<Paper className={fixedHeightPaper}>
 								<Chart />
-							</Paper>
-						</Grid>
-					
-						{/* Recent Orders */}
-						<Grid item xs={12}>
-							<Paper className={classes.paper}>
-								<Orders />
 							</Paper>
 						</Grid>
 					</Grid>
